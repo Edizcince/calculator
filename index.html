@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <link rel="stylesheet" href="calculator.css">
+    </head>
+    <body>
+
+
+        <button id="c" onclick="clearinput()">clear</button>
+        <div id="calculator">
+            <input class="input" id="output" type="text" readonly>
+            <button id="b1" onclick="appendToinput('1')">1</button>
+            <button id="b2" onclick="appendToinput('2')">2</button>
+            <button id="b3" onclick="appendToinput('3')">3</button>
+            <br>
+            <button id="b4" onclick="appendToinput('4')">4</button>
+            <button id="b5" onclick="appendToinput('5')">5</button>
+            <button id="b6" onclick="appendToinput('6')">6</button>
+            <br>
+            <button id="b7" onclick="appendToinput('7')">7</button>
+            <button id="b8" onclick="appendToinput('8')">8</button>
+            <button id="b9" onclick="appendToinput('9')">9</button>
+            <br>
+            <button id="plus" onclick="appendToinput('+')">+</button>
+            <button id="b0" onclick="appendToinput('0')">0</button>
+            <button id="min" onclick="appendToinput('-')">-</button>
+            <br>
+            <button id="times" onclick="appendToinput('*')">*</button>
+            <button id="divide" onclick="appendToinput('/')">/</button>
+            <button id="equal" onclick="calculateDisplay()">=</button>            
+        </div>
+        <script src="calculator.js"></script>
+    </body>
+</html>
