@@ -1,0 +1,29 @@
+body{
+    min-width: calc(310px / 3);
+    min-height: calc(310px / 3);
+}
+
+.container{
+    height: calc(310px / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    gap: 2px;
+    width: calc(350px / 3);  
+    height: calc(310px / 3);
+    flex-wrap: wrap;
+}
+button{
+    width: calc(100px / 3);
+    height: calc(100px / 3);
+    border: 3px solid darkgrey;
+    background-color: rgb(209, 209, 209);
+    font-size: 25px;
+    text-align: center;
+}
+button:hover{
+    border: 1px solid black;
+}
