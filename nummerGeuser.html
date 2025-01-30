@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raad het Getal Spel</title>
+    <link rel="stylesheet" href="nummerGeuser.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Raad het Getal!</h1>
+        <p>Raad een getal tussen 1 en 10.</p>
+        <input type="number" id="guess" min="1" max="10" placeholder="Voer een getal in" />
+        <button onclick="checkGuess()">Raad!</button>
+        <p id="result"></p>
+        <button id="reset" onclick="resetGame()" style="display:none;">Speel opnieuw</button>
+    </div>
+
+    <script src="nummerGeuser.js"></script>
+</body>
+</html>

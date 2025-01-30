@@ -1,24 +1,17 @@
 let turn = "X"
 function end(turn){
     var body = document.getElementsByTagName("BODY")[0];
-    body.innerHTML = turn;
-    if(turn == "X"){ 
+    body.innerHTML = turn + " wint";
+    if(turn == "X"){
         body.style.color = "red";
-        var val = 'X';
     }
     else{
         body.style.color = "blue";
-        var val = 'O';
     }
-    body.style.fontSize = "110px";
     body.style.textAlign = "center";
-    body.style.margin = "0 auto";
-    var iframeId = window.name || 'unknown';
-
-    window.parent.postMessage({
-        iframeId: iframeId,
-        value: val
-    }, "*");
+    body.style.marginTop = "10vh";
+    body.style.fontWeight = "bold";
+    body.style.fontSize = "30vw";
 }
 function checkWin(){
     if (button1.textContent == "X" && button2.textContent == "X" && button3.textContent == "X"){
@@ -123,7 +116,9 @@ function checkWin(){
         body.style.backgroundColor = "orange";
         body.style.fontSize = "50px";
         body.style.textAlign = "center";
+        body.style.marginTop = "10vh";
         body.style.fontWeight = "bold";
+        body.style.fontSize = "30vw";
      }
 
 }
