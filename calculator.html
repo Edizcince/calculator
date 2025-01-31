@@ -1,35 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>calculator</title>
-        <link rel="stylesheet" href="calculator.css">
-    </head>
-    <body>
-
-
-        <button id="c" onclick="clearinput()">clear</button>
-        <div id="calculator">
-            <input class="input" id="output" type="text" readonly>
-            <button id="b1" onclick="appendToinput('1')">1</button>
-            <button id="b2" onclick="appendToinput('2')">2</button>
-            <button id="b3" onclick="appendToinput('3')">3</button>
-            <br>
-            <button id="b4" onclick="appendToinput('4')">4</button>
-            <button id="b5" onclick="appendToinput('5')">5</button>
-            <button id="b6" onclick="appendToinput('6')">6</button>
-            <br>
-            <button id="b7" onclick="appendToinput('7')">7</button>
-            <button id="b8" onclick="appendToinput('8')">8</button>
-            <button id="b9" onclick="appendToinput('9')">9</button>
-            <br>
-            <button id="plus" onclick="appendToinput('+')">+</button>
-            <button id="b0" onclick="appendToinput('0')">0</button>
-            <button id="min" onclick="appendToinput('-')">-</button>
-            <br>
-            <button id="times" onclick="appendToinput('*')">*</button>
-            <button id="divide" onclick="appendToinput('/')">/</button>
-            <button id="equal" onclick="calculateDisplay()">=</button>            
-        </div>
-        <script src="calculator.js"></script>
-    </body>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input, button, select { margin: 10px; padding: 5px; width: 90%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculator</h2>
+        <label for="operation">Kies een bewerking:</label>
+        <select id="operation">
+            <option value="add">Optellen</option>
+            <option value="subtract">Aftrekken</option>
+            <option value="multiply">Vermenigvuldigen</option>
+            <option value="divide">Delen</option>
+        </select>
+        <input type="number" id="num1" placeholder="Eerste getal">
+        <input type="number" id="num2" placeholder="Tweede getal">
+        <button onclick="calculate()">Bereken</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let operation = document.getElementById('operation').value;
+            let result;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerText = 'Voer geldige getallen in.';
+                return;
+            }
+            
+            switch (operation) {
+                case 'add': result = num1 + num2; break;
+                case 'subtract': result = num1 - num2; break;
+                case 'multiply': result = num1 * num2; break;
+                case 'divide': 
+                    if (num2 === 0) {
+                        document.getElementById('result').innerText = 'Delen door nul is niet toegestaan!';
+                        return;
+                    }
+                    result = num1 / num2; 
+                    break;
+            }
+            
+            document.getElementById('result').innerText = 'Resultaat: ' + result;
+        }
+    </script>
+</body>
 </html>
